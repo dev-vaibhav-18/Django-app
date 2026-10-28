@@ -130,7 +130,6 @@ class Question(models.Model):
             is_correct=True,
             id__in=selected_ids,
         ).count()
-
         return all_answers == selected_correct
 
 
@@ -156,4 +155,4 @@ class Submission(models.Model):
     choices = models.ManyToManyField(Choice)
 
     def __str__(self):
-        return f"Submission {self.id} - {self.enrollment}"
+        return f"Submission {self.id}"
